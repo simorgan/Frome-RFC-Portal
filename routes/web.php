@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,5 +29,12 @@ Route::get('/', [PagesController::class, 'index'])->middleware('auth');
 
 Route::get('/home', [PagesController::class, 'index'])->middleware('auth');
 
-Route::get('/AllocatedKit', [PagesController::class, 'kitout'])->middleware('auth');
+Route::get('/AllocatedKit', [PostController::class, 'kitAllocated'])->middleware('auth');
 
+Route::get('/kitCollection', [PagesController::class, 'kitCollection'])->middleware('auth');
+
+Route::post('/kitCollectionId', [PostController::class, 'kitOut'])->middleware('auth');
+
+Route::post('/kitCollectionSubmit', [PostController::class, 'kitOutCollection'])->middleware('auth');
+
+//Route::resource('post', 'App\Http\Controllers\PostController');

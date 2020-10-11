@@ -1,7 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
 body {
-    background: #c9d6ff; /* fallback for old browsers */
+    background: #cdcfda; /* fallback for old browsers */
     background: -webkit-linear-gradient(
         to top,
         #c9d6ff,
@@ -9,13 +13,14 @@ body {
     ); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(
         to top,
-        #c9d6ff,
+        #afb3c0,
         #e2e2e2
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     min-height: 100vh;
 }
+
 .messageBox{
-    margin-top: 170px;
+    margin-top: 150px;
 }
 
 .secondNav{
@@ -114,4 +119,45 @@ body {
             color: #919aa3;
         }
     }
+}
+
+
+/*--------------------------------------
+| Allocated kit 
+|--------------------------------------*/
+
+.titleSize{
+    font-size:xx-large;
+}
+
+@media (max-width: 770px) {
+    .tableText {
+        font-size: x-small;
+    }
+    .messageBoxResize{
+        margin-top: 140px;
+    }
+    .titleSize{
+        font-size:small;
+    }
+ 
+   
+}
+@media (max-width: 400px) {
+    .colResize {
+        width: 90px;
+    }
+    .titleSize{
+        font-size:x-small;
+    }
+   
+}
+@media (min-width: 600px){
+    .messageBoxResize{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      
+    }
+   
 }

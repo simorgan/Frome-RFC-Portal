@@ -12,7 +12,7 @@
       <li class="nav-item nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kit Handout</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="/kitHandout">Kit collections</a>
+            <a class="dropdown-item" href="/kitCollection">Kit collections</a>
             <a class="dropdown-item" href="/AllocatedKit">All Seniors Allocated Kit</a>
             <a class="dropdown-item" href="#!">Add Member</a>
 
@@ -49,9 +49,9 @@
 ------------------------------------------------->
 <nav class="navbar navbar-expand navbar-dark fixed-top bg-dark">
 
-    <a class="navbar-brand" href="/"><img style="width: 70px" src="{{ asset('/frome_logo.png') }}" alt="Frome RFC Logo"></a>
+    <a class="navbar-brand" href="/"><img class="navImgResize" style="width: 70px" src="{{ asset('/frome_logo.png') }}" alt="Frome RFC Logo"></a>
     <ul  class="nav navbar-nav text-light font-weight-bold">
-      <li class="">{{$title}}</li>
+      <li class="titleSize">{{$title}}</li>
   </ul>
 
 

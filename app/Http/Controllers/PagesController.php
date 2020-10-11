@@ -13,16 +13,12 @@ class PagesController extends Controller
     }
 
 
-    Public function kitout(){
 
+    Public function kitcollection(){
 
-        $members = \App\Models\Member::orderBy('name')->simplePaginate(10);
+        $title = "Senior's Kit Collection";
 
-        //$members = \App\Models\Member::all()->paginate(2);
-
-        $title = "Senior's Allocated Kit";
-
-        return view('pages.AllocatedKit', compact('members', 'title'));
+        return view('pages.kitCollection', compact('title'));
 
     }
 }

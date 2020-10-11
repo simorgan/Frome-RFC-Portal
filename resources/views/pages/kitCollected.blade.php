@@ -8,7 +8,13 @@
     <h5 class="alert-heading"><u>Notices</u></h5>
   
     <p>You have no notices</p>
+
+    {{$id}} <br>
+    {{$top}}
+    {{$shorts}}
+    {{$socks}}
  
   </div>
     
 @endsection
+
