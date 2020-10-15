@@ -13,12 +13,16 @@ class PagesController extends Controller
     }
 
 
-
-    Public function kitcollection(){
+    /**
+     * Kit Collection App
+     * 
+     * Pages:
+     *  -collectionId = page to search for the member with the ID
+     */
+    Public function kitMemberSearch(){
 
         $title = "Senior's Kit Collection";
 
         return view('pages.kitCollection', compact('title'));
-
     }
 }

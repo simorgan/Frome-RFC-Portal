@@ -4,11 +4,15 @@
 @section('content')
 
     <div class="jumbotron messageBox messageBoxResize">
+
         
-        <form class="form-inline" method="POST" action="kitCollectionId">
-            @csrf 
+        
+    <form class="form-inline" method="GET" action="kitCollectionShowMember">
+  
            
-            <input type="text" name="id" class="form-control mb-2 mr-sm-2" id="" placeholder="Enter ID">
+            <input type="text" name="id" class="form-control mb-2 mr-sm-2" placeholder="Enter ID" autocomplete="off">
              <button class="btn btn-primary mb-2">Search</button>
           </form>
+
+        
 @endsection

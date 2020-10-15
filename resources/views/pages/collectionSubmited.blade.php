@@ -1,0 +1,1 @@
+<h1>Collection Submited!!!! yeah it is working ID is: {{$idNumber}}</h1>

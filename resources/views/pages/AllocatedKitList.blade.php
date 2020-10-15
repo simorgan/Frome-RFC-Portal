@@ -65,7 +65,6 @@
 
     </table>
 
-
 @endforeach
 </div>
 

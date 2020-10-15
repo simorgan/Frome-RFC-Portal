@@ -7,14 +7,13 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     Public function kitAllocated(){
-        $members = \App\Models\Member::orderBy('name')->simplePaginate(10);
-        $title = "Senior's Allocated Kit";
+       // $members = \App\Models\Member::orderBy('name')->simplePaginate(10);
+        //$title = "Senior's Allocated Kit";
 
-        return view('pages.AllocatedKit', compact('members', 'title'));
+//        return view('pages.AllocatedKit', compact('members', 'title'));
     }
 
     Public function kitOut(){
-       
 
         $id = request('id');
         $member = \App\Models\Member::find($id);
