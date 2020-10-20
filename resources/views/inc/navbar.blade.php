@@ -8,33 +8,36 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
+      <li>
+        <a class="nav-link" href="/" role="button" aria-haspopup="true" aria-expanded="false">Dashboard</a>
+      </li>
      
       <li class="nav-item nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kit Handout</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="/kitMemberSearch">Kit collections</a>
             <a class="dropdown-item" href="/kitCollection">All Seniors Allocated Kit</a>
-            <a class="dropdown-item" href="#!">Add Member</a>
+            <a class="dropdown-item" href="/kitCollectionAddMember">Add Member</a>
 
         
       </li>
       <li class="nav-item nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Membership</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="/kitCollections">Membership</a>
-            <a class="dropdown-item" href="/showSeniorMembers">Members Alocated Kit</a>
-            <a class="dropdown-item" href="#!">Add Member</a>
+            <a class="dropdown-item" href="/">Membership</a>
+            <a class="dropdown-item" href="/">See Members</a>
+            <a class="dropdown-item" href="#!">Update Membership list</a>
 
         
       </li>
      
 
       <li class="nav-item nav-item dropdown ">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Membership</a>
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Finance</a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="/kitCollections">Membership</a>
-          <a class="dropdown-item" href="/">Paid Members</a>
-          <a class="dropdown-item" href="#!">Add Member</a>
+          <a class="dropdown-item" href="/">Membership Numbers</a>
+          <a class="dropdown-item" href="/">Membership Income</a>
+          <a class="dropdown-item" href="#!">Memebrship payment</a>
       </li>
            
     </ul>
@@ -49,7 +52,7 @@
 ------------------------------------------------->
 <nav class="navbar navbar-expand navbar-dark fixed-top bg-dark">
 
-    <a class="navbar-brand" href="/"><img class="navImgResize" style="width: 70px" src="{{ asset('/frome_logo.png') }}" alt="Frome RFC Logo"></a>
+    <a class="navbar-brand" href="/"><img class="navImgResize navImg" src="{{ asset('/frome_logo.png') }}" alt="Frome RFC Logo"></a>
     <ul  class="nav navbar-nav text-light font-weight-bold">
       <li class="titleSize">{{$title}}</li>
   </ul>

@@ -25,4 +25,11 @@ class PagesController extends Controller
 
         return view('pages.kitCollection', compact('title'));
     }
+
+    Public function kitCollectionAddMember(){
+
+        $title = "Senior's Kit Collection Add Member";
+
+        return view('pages.kitCollectionAddMember', compact('title'));
+    }
 }

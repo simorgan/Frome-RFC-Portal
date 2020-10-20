@@ -27,7 +27,10 @@ class CreatesMembersTable extends Migration
             $table->string('socks')->default('0');
             $table->string('socksCollectDate');
             $table->string('stashEmail');
-          
+            $table->string('topIssuedBy');
+            $table->string('shortsIssuedBy');
+            $table->string('socksIssuedBy');
+            
             
         });
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Models\Member;
+use Auth;
 
 class KitAppController extends Controller
 {
@@ -12,7 +13,7 @@ class KitAppController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index()//"Allocated kit list" 
     {
     
         $members = Member::orderBy('name')->simplePaginate(10);
@@ -65,7 +66,7 @@ class KitAppController extends Controller
 
         $id = request('id');
         $member = Member::find($id);
-        $title = "Senior's Kit Collection show";
+        $title = "Senior's Kit Collection";
 
         return view('pages.kitCollectionShowMember' , compact('title', 'member') );
     }
@@ -82,7 +83,7 @@ class KitAppController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified resource in storage when the kit have been collected.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -90,8 +91,34 @@ class KitAppController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $idNumber = $request;
-        return view('pages.collectionSubmited', compact('idNumber'));
+    $querry = Member::find($id);
+
+        if ($request['checkBoxTop'] == true) {
+            $topCollection = $querry;
+            $topCollection->top = '1';
+            $topCollection->topCollectDate = date("Y-m-d");
+            $topCollection->topSize = $request['topSize'];
+            $topCollection->topIssuedBy = Auth::user()->name;
+            $topCollection->save();     
+        }
+        if ($request['checkBoxShorts'] == true){
+            $shortsCollection = $querry;
+            $shortsCollection->shorts = '1';
+            $shortsCollection->shortCollectDate = date("Y-m-d");
+            $shortsCollection->shortSize = $request['shortSize'];
+            $shortsCollection->shortsIssuedBy = Auth::user()->name;
+            $shortsCollection->save();   
+        }
+        if ($request['checkBoxSocks'] == true){
+            $socksCollection = $querry;
+            $socksCollection->socks = '1';
+            $socksCollection->sockCollectDate = date("Y-m-d");
+            $socksCollection->socksIssuedBy = Auth::user()->name;
+            $socksCollection->save();
+        }
+    
+    $title = 'Kit Submited';
+    return view('pages.collectionSubmited', compact('title'));
     }
 
     /**

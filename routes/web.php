@@ -47,6 +47,8 @@ Route::get('kitMemberSearch', [PagesController::class, 'kitMemberSearch']);
 
 Route::get('kitCollectionShowMember', [KitAppController::class, 'kitCollectionShowMember']);
 
+Route::get('kitCollectionAddMember', [PagesController::class, 'kitCollectionAddMember']);
+
  
 
 

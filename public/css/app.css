@@ -17168,11 +17168,15 @@ body {
 }
 
 /*--------------------------------------
-| Allocated kit 
+| Allocated kit App
 |--------------------------------------*/
 
 .titleSize {
   font-size: xx-large;
+}
+
+.navImg {
+  width: 70px;
 }
 
 @media (max-width: 770px) {
@@ -17186,6 +17190,14 @@ body {
 
   .titleSize {
     font-size: small;
+  }
+
+  .navImgResize {
+    width: 50px;
+  }
+
+  .secondNav {
+    margin-top: 75px;
   }
 }
 
