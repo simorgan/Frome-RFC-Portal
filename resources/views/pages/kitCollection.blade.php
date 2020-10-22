@@ -4,7 +4,7 @@
 @section('content')
 
     <div class="jumbotron messageBox messageBoxResize">
-
+    {{--searching for a member using the ID number--}}
         <h3>Member Search</h3> 
         
     <form class="form-inline" method="GET" action="kitCollectionShowMember">

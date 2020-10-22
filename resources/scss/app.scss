@@ -134,6 +134,15 @@ body {
     width: 70px;
 }
 
+input.largerCheckbox {
+    width : 25px;
+    height : 25px;
+}
+
+/*--------------------------------------
+| Moblie responsive
+|--------------------------------------*/
+
 @media (max-width: 770px) {
     .tableText {
         font-size: x-small;
@@ -172,7 +181,3 @@ body {
    
 }
 
-input.largerCheckbox {
-    width : 25px;
-    height : 25px;
-}

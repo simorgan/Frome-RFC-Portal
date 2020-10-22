@@ -13,9 +13,9 @@
       </li>
      
       <li class="nav-item nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kit Handout</a>
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kit Collection App</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="/kitMemberSearch">Kit collections</a>
+            <a class="dropdown-item" href="/kitMemberSearch">Collections</a>
             <a class="dropdown-item" href="/kitCollection">All Seniors Allocated Kit</a>
             <a class="dropdown-item" href="/kitCollectionAddMember">Add Member</a>
 
@@ -81,18 +81,7 @@
             </div>
         </li>
 
-</ul>
-   
-       
-
-
-
-
-                   
-      
-   
-  
- 
+</ul> 
   </nav>
 
 

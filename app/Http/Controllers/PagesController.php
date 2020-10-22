@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
+
+    /**
+     * index page(will load the dashboard)
+     */
     Public function index(){
         $title = 'Dashboard';
 
@@ -14,10 +18,12 @@ class PagesController extends Controller
 
 
     /**
-     * Kit Collection App
-     * 
+     *          | Kit Collection App |
+     *                             
      * Pages:
-     *  -collectionId = page to search for the member with the ID
+     *  *kitMemberSearch = page to search for the member with the ID.
+     * 
+     * *kitCollectionAddMember = page to add a paid member to the database.
      */
     Public function kitMemberSearch(){
 

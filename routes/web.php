@@ -15,40 +15,25 @@ use App\Http\Controllers\KitAppController;
 |
 */
 
-/*Route::get('/', function () {
-    return view('pages.dashboard');
-})->middleware('auth');
-
-Route::get('/home', function () {
-  $title = 'Dashboard';
-   return view('pages.dashboard')->with('Title', $title);
-})->middleware('auth');*/
-
-
+/**
+ * Routes to pages
+ */
 Route::get('/', [PagesController::class, 'index'])->middleware('auth');
-
 
 Route::get('/home', [PagesController::class, 'index'])->middleware('auth');
 
-//Route::get('/collectionId', [PagesController::class, 'collectionId'])->middleware('auth');
+Route::get('kitMemberSearch', [PagesController::class, 'kitMemberSearch'])->middleware('auth');
 
-//Route::get('/AllocatedKit', [PostController::class, 'kitAllocated'])->middleware('auth');
+Route::get('kitCollectionAddMember', [PagesController::class, 'kitCollectionAddMember'])->middleware('auth');
 
-//Route::get('/kitCollecting', [PagesController::class, 'kitCollecting'])->middleware('auth');
 
-//Route::post('/kitCollectionId', [PostController::class, 'kitOut'])->middleware('auth');
 
-//Route::post('/kitCollectionSubmit', [PostController::class, 'kitOutCollection'])->middleware('auth');
+/**
+ * Route and resources for the Kit Collection App
+ */
+Route::get('kitCollectionShowMember', [KitAppController::class, 'kitCollectionShowMember'])->middleware('auth');
 
 Route::resource('kitCollection', KitAppController::class)->parameters([
-  'kitCollection' => 'id']);
-
-Route::get('kitMemberSearch', [PagesController::class, 'kitMemberSearch']);
-
-Route::get('kitCollectionShowMember', [KitAppController::class, 'kitCollectionShowMember']);
-
-Route::get('kitCollectionAddMember', [PagesController::class, 'kitCollectionAddMember']);
-
- 
+  'kitCollection' => 'id'])->middleware('auth');
 
 
