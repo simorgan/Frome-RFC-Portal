@@ -11,6 +11,7 @@
 <li>Membership status view</li>
 </ul>
 
+<p><a href="https://github.com/simorgan/frome_kit_hand_out_prototype">Here is the membership kit collection app prototype</a></p>
 
 <p>More to be added......</p>
 
