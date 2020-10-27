@@ -17054,6 +17054,7 @@ body {
 
 .messageBox {
   margin-top: 150px;
+  max-width: 75%;
 }
 
 .secondNav {
@@ -17179,6 +17180,15 @@ body {
   width: 70px;
 }
 
+input.largerCheckbox {
+  width: 25px;
+  height: 25px;
+}
+
+/*--------------------------------------
+| Moblie responsive
+|--------------------------------------*/
+
 @media (max-width: 770px) {
   .tableText {
     font-size: x-small;
@@ -17186,6 +17196,7 @@ body {
 
   .messageBoxResize {
     margin-top: 140px;
+    max-width: 100%;
   }
 
   .titleSize {
@@ -17217,10 +17228,5 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
-}
-
-input.largerCheckbox {
-  width: 25px;
-  height: 25px;
 }
 

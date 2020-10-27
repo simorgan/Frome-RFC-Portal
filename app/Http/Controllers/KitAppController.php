@@ -17,7 +17,7 @@ class KitAppController extends Controller
     {
     
         $members = Member::orderBy('name')->simplePaginate(10);
-        $title = "Senior's Kit Collection";
+        $title = "Kit Collection App";
 
 
         return view('pages.AllocatedKitList', compact('title', 'members'));
@@ -30,7 +30,7 @@ class KitAppController extends Controller
      */
     public function create()
     {
-        //
+       
     }
 
     /**
@@ -41,7 +41,21 @@ class KitAppController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+
+        $memberAdd = new member;
+
+        $memberAdd->name = $request->input('name');
+        $memberAdd->email = $request->input('email');
+        $memberAdd->topSize = $request->input('topSize');
+        $memberAdd->shortSize = $request->input('shortSize');
+        $memberAdd->save();
+        
+
+
+        $title = 'Kit Collection App';
+
+        return view('pages.kitCollectionMemberAdded', compact('title', 'memberAdd'));
     }
 
     /**
@@ -66,7 +80,7 @@ class KitAppController extends Controller
 
         $id = request('id');
         $member = Member::find($id);
-        $title = "Senior's Kit Collection";
+        $title = "Kit Collection App";
 
         return view('pages.kitCollectionShowMember' , compact('title', 'member') );
     }
@@ -91,7 +105,7 @@ class KitAppController extends Controller
      */
     public function update(Request $request, $id)
     {
-    $querry = Member::find($id);
+        $querry = Member::find($id);
 
         if ($request['checkBoxTop'] == true) {
             $topCollection = $querry;
@@ -117,7 +131,7 @@ class KitAppController extends Controller
             $socksCollection->save();
         }
     
-    $title = 'Kit Submited';
+        $title = 'Kit Collection App';
     return view('pages.collectionSubmited', compact('title'));
     }
 

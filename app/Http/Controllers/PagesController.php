@@ -27,14 +27,14 @@ class PagesController extends Controller
      */
     Public function kitMemberSearch(){
 
-        $title = "Senior's Kit Collection";
+        $title = "Kit Collection App";
 
         return view('pages.kitCollection', compact('title'));
     }
 
     Public function kitCollectionAddMember(){
 
-        $title = "Senior's Kit Collection Add Member";
+        $title = "Kit Collection App";
 
         return view('pages.kitCollectionAddMember', compact('title'));
     }

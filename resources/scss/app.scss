@@ -21,6 +21,8 @@ body {
 
 .messageBox{
     margin-top: 150px;
+    max-width: 75%;
+
 }
 
 .secondNav{
@@ -149,6 +151,7 @@ input.largerCheckbox {
     }
     .messageBoxResize{
         margin-top: 140px;
+        max-width: 100%;
     }
     .titleSize{
         font-size:small;
