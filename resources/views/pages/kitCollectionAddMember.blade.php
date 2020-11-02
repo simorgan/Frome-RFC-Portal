@@ -1,6 +1,11 @@
 @extends('layouts.app')
+@push('head')
+<script src="{{ asset('js/script.js')}}"></script>
+@endpush
 
 @section('content')
+
+   
 
     <div class="jumbotron messageBox messageBoxResize">
     {{--searching for a member using the ID number--}}
@@ -26,7 +31,7 @@
             </select>
          
             <label for="">Shorts Size</label>
-            <select name="shortSize" id="" required>
+            <select name="shortsSize" id="" required>
                 <option value=""></option>
                 <option value="N/A">N/A</option>
                 <option value="30">30</option>
@@ -37,8 +42,18 @@
                 <option value="40">40</option></option>
             </select>
          <br>
-             <button class="btn btn-primary mb-2">Add Member</button>
+         <div id="loading" class="loadingHide"> {{--|display after add member is clicked|--}}
+         <h3>Loading</h3>
+            <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+         
+         <h1 id="loading" class="loadingHide spinner-border"></h1>{{--|display after add member is clicked|--}}
+             <button id="memberAdd" class="btn btn-primary mb-2">Add Member</button>
           </form>
 
-        
+         
+
+   
 @endsection

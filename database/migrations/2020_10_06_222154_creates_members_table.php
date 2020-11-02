@@ -20,16 +20,16 @@ class CreatesMembersTable extends Migration
             $table->timestamps();
             $table->string('top')->default('0');
             $table->string('topSize')->default('N/A');
-            $table->string('topCollectDate');
+            $table->string('topCollectDate')->nullable();
             $table->string('shorts')->default('0');
-            $table->string('shortsize')->default('N/A');
-            $table->string('shortCollectDate');
+            $table->string('shortsSize')->default('N/A');
+            $table->string('shortsCollectDate')->nullable();
             $table->string('socks')->default('0');
-            $table->string('socksCollectDate');
-            $table->string('stashEmail');
-            $table->string('topIssuedBy');
-            $table->string('shortsIssuedBy');
-            $table->string('socksIssuedBy');
+            $table->string('socksCollectDate')->nullable();
+            $table->string('stashEmail')->nullable();
+            $table->string('topIssuedBy')->nullable();
+            $table->string('shortsIssuedBy')->nullable();
+            $table->string('socksIssuedBy')->nullable();
             
             
         });

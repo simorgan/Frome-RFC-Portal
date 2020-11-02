@@ -3,7 +3,6 @@
 
 @section('content')
 <div class="jumbotron messageBox messageBoxResize">
-    
 @foreach ($members as $member) {{--|  Looping through the called members   |--}}
 
         {{--|member name and id|--}}

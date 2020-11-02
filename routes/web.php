@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\KitAppController;
+use App\mail\kitCollectionMail;
+use Illuminate\Support\Facades\Mail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,8 +34,20 @@ Route::get('kitCollectionAddMember', [PagesController::class, 'kitCollectionAddM
  * Route and resources for the Kit Collection App
  */
 Route::get('kitCollectionShowMember', [KitAppController::class, 'kitCollectionShowMember'])->middleware('auth');
+Route::get('collectionOutstanding', [KitAppController::class, 'collectionsOutstanding'])->middleware('auth');
 
 Route::resource('kitCollection', KitAppController::class)->parameters([
   'kitCollection' => 'id'])->middleware('auth');
 
+
+
+/**
+ * test email views
+ */
+/*
+Route::get('email', function(){
+
+
+  return new kitCollectionMail;
+});*/
 

@@ -1,4 +1,8 @@
 @extends('layouts.app')
+@push('head')
+<script src="{{ asset('js/script.js')}}"></script>
+    
+@endpush
 
 {{--|page shown when the members ID is searched for--}}
 @section('content')
@@ -23,10 +27,10 @@
       
     @if ($member['top'] == 1 && $member['shorts'] == 1 && $member['socks'] == 1  )
       {{--|Show Kit Collected if all kit has been collected|--}}
-      <div class="alert alert-danger" style="text-align: center; margin-top:1rem;"><p>Kit Collection Has been completed. <br> All kit has been collected by {{$member['name']}}. </p>
-            <p>Top issued by {{$member['topIssuedBy']}} <br> on {{date("d-m-Y", strtotime($member['topCollectDate']))}}</p>
-            <p>Shorts issued by {{$member['shortsIssuedBy']}} <br> on {{date("d-m-Y", strtotime($member['shortCollectDate']))}}</p>
-            <p>Socks issued by {{$member['socksIssuedBy']}} <br> on {{date("d-m-Y", strtotime($member['sockCollectDate']))}}</p>
+      <div class="alert alert-danger" style="text-align: center; margin-top:1rem;"><p>All kit has been collected by {{$member['name']}}. </p> <hr>
+            <p>Top issued by {{$member['topIssuedBy']}} <br> on {{date("d-m-Y", strtotime($member['topCollectDate']))}}</p> <hr>
+            <p>Shorts issued by {{$member['shortsIssuedBy']}} <br> on {{date("d-m-Y", strtotime($member['shortsCollectDate']))}}</p> <hr>
+            <p>Socks issued by {{$member['socksIssuedBy']}} <br> on {{date("d-m-Y", strtotime($member['socksCollectDate']))}}</p>
       </div>
         
     @else
@@ -54,8 +58,8 @@
               <option name="M">M</option>
               <option name="L">L</option>
               <option name="XL">XL</option>
-              <option name="XXL">XXL</option>
-              <option name="XXXL">XXXL</option>
+              <option name="XXL">2XL</option>
+              <option name="XXXL">3XL</option>
             </select>
           </td>
 
@@ -80,8 +84,8 @@
             <tr style="padding-left: 3rem; text-align:center">
             <td>  
              <label>Size:</label>
-             <select name="shortSize" class="btn btn-sm btn-light ">
-             <option name="{{$member['shortSize']}}">{{$member['shortSize']}}</option><!--|load in the size stored in the database|-->
+             <select name="shortsSize" class="btn btn-sm btn-light ">
+             <option name="{{$member['shortsSize']}}">{{$member['shortsSize']}}</option><!--|load in the size stored in the database|-->
                <option >30</option>
                <option >32</option>
                <option >34</option></option>
@@ -96,7 +100,7 @@
          </tr>
             @else
             {{--if shorts has been collected show that is has and the name issued by--}}
-         <td class="alert alert-danger">Shorts issued by {{$member['shortsIssuedBy']}} on {{date("d-m-Y", strtotime($member['shortCollectDate']))}}</td>
+         <td class="alert alert-danger">Shorts issued by {{$member['shortsIssuedBy']}} on {{date("d-m-Y", strtotime($member['shortsCollectDate']))}}</td>
               
             @endif
 
@@ -118,14 +122,15 @@
          </tr>
             @else
               {{--if top has been collected show that is has and the name issued by--}}
-         <td class="alert alert-danger">Socks issued by {{$member['socksIssuedBy']}} on {{date("d-m-Y", strtotime($member['sockCollectDate']))}}</td>
+         <td class="alert alert-danger">Socks issued by {{$member['socksIssuedBy']}} on {{date("d-m-Y", strtotime($member['socksCollectDate']))}}</td>
               
             @endif
      
 
     </table>
     <div class="d-flex align-items-end flex-column">
-    <button class="btn btn-secondary p-2">Submit</button>
+      <h1 id="loading" class="loadingHide">Loading</h1>{{--|display after add member is clicked|--}}
+    <button id="memberAdd" class="btn btn-secondary p-2">Submit</button>
 </div>
 </form>
             @endif

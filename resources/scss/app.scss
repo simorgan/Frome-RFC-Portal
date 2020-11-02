@@ -141,9 +141,21 @@ input.largerCheckbox {
     height : 25px;
 }
 
+.loadingHide{
+    display: none;
+}
+
+.loadingShow{
+    color: red;
+   
+}
+
+
+
 /*--------------------------------------
 | Moblie responsive
 |--------------------------------------*/
+
 
 @media (max-width: 770px) {
     .tableText {
@@ -181,6 +193,6 @@ input.largerCheckbox {
         margin-right: auto;
       
     }
-   
+  
 }
 

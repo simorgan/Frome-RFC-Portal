@@ -16,7 +16,8 @@
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kit Collection App</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="/kitMemberSearch">Collections</a>
-            <a class="dropdown-item" href="/kitCollection">All Seniors Allocated Kit</a>
+            <a class="dropdown-item" href="/kitCollection">All Allocated Kit</a>
+            <a class="dropdown-item" href="/collectionOutstanding">Out Standing Collections</a>
             <a class="dropdown-item" href="/kitCollectionAddMember">Add Member</a>
 
         

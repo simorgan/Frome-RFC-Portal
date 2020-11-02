@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use \App\Models\Member;
+use \App\Mail\kitCollectionMail;
 use Auth;
+
 
 class KitAppController extends Controller
 {
@@ -48,8 +51,10 @@ class KitAppController extends Controller
         $memberAdd->name = $request->input('name');
         $memberAdd->email = $request->input('email');
         $memberAdd->topSize = $request->input('topSize');
-        $memberAdd->shortSize = $request->input('shortSize');
+        $memberAdd->shortsSize = $request->input('shortsSize');
         $memberAdd->save();
+
+        Mail::to($request->input('email'))->send(new kitCollectionMail('test'));
         
 
 
@@ -86,6 +91,25 @@ class KitAppController extends Controller
     }
 
     /**
+     * Display the oder that are outstanding.
+     * 
+     */
+    public function collectionsOutstanding(){
+
+        $members = Member::all()->sortBy('name');
+        $memberCount = 0;
+        foreach ($members as $member) {
+        if ($member['top'] == 0 || $member['shorts'] == 0 || $member['socks']== 0) {
+         $memberCount++;
+        }
+     }
+        $memberCountDone = count($members);
+        $title = 'Kit Collection App';
+        return view('pages.collectionOutstanding', compact('title','members', 'memberCount', 'memberCountDone'));
+
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -106,6 +130,7 @@ class KitAppController extends Controller
     public function update(Request $request, $id)
     {
         $querry = Member::find($id);
+      
 
         if ($request['checkBoxTop'] == true) {
             $topCollection = $querry;
@@ -118,18 +143,29 @@ class KitAppController extends Controller
         if ($request['checkBoxShorts'] == true){
             $shortsCollection = $querry;
             $shortsCollection->shorts = '1';
-            $shortsCollection->shortCollectDate = date("Y-m-d");
-            $shortsCollection->shortSize = $request['shortSize'];
+            $shortsCollection->shortsCollectDate = date("Y-m-d");
+            $shortsCollection->shortsSize = $request['shortsSize'];
             $shortsCollection->shortsIssuedBy = Auth::user()->name;
             $shortsCollection->save();   
         }
         if ($request['checkBoxSocks'] == true){
             $socksCollection = $querry;
             $socksCollection->socks = '1';
-            $socksCollection->sockCollectDate = date("Y-m-d");
+            $socksCollection->socksCollectDate = date("Y-m-d");
             $socksCollection->socksIssuedBy = Auth::user()->name;
             $socksCollection->save();
         }
+
+        $querry2 = Member::find($id);
+
+        if ($querry2['top'] == '1' && $querry2['shorts'] == '1' && $querry2['socks'] == '1' ) {
+          
+            Mail::to($querry['email'])->send(new kitCollectionMail());
+            
+
+        }
+
+
     
         $title = 'Kit Collection App';
     return view('pages.collectionSubmited', compact('title'));
